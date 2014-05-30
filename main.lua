@@ -731,7 +731,7 @@ function rotatedsquare(mode, x, y, r, d)
 end
 
 function drawblock(x, y, width, height, fillcolor, outlinecolor, r)
-	if math.mod((r or 0), math.pi/2) ~= 0 then --Rotated
+	if math.fmod((r or 0), math.pi/2) ~= 0 then --Rotated
 		love.graphics.setColor(unpack(fillcolor))
 		rotatedsquare("fill", x+width/2+.5, y+height/2+.5, r or 0, width-1)
 		love.graphics.setColor(unpack(outlinecolor))
