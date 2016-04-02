@@ -489,11 +489,11 @@ function drawtile(cox, coy, coz, tile, xd, yd, zd)
 				local x, y = convertGRDtoSCR(pl.drawx, pl.drawy, pl.drawz)
 				love.graphics.setColor(255, 255, 255, 255*fadecolor)
 				if won == false then
-					love.graphics.drawq(playerimg, playerquad[1], round(x), round(y+halfboxwidth*pitch*0.6), 0, playerscale, playerscale, 10, 20)
+					love.graphics.draw(playerimg, playerquad[1], round(x), round(y+halfboxwidth*pitch*0.6), 0, playerscale, playerscale, 10, 20)
 					love.graphics.setColor(255, 255, 255, 255*coinglowa)
 					love.graphics.draw(coinglowimg, round(x), round(y+halfboxwidth*pitch*0.6), 0, playerscale/4, playerscale/4, 29, 89)
 				else
-					love.graphics.drawq(playerimg, playerquad[2], round(x), round(y+halfboxwidth*pitch*0.6), 0, playerscale, playerscale, 10, 20)
+					love.graphics.draw(playerimg, playerquad[2], round(x), round(y+halfboxwidth*pitch*0.6), 0, playerscale, playerscale, 10, 20)
 					love.graphics.setColor(0, 255, 0, 255*fadecolor)
 					love.graphics.rectangle("fill", round(x)-2*playerscale, round(y+halfboxwidth*pitch*0.6)-16*playerscale-winwindowtimer/1*3*playerscale, 4*playerscale, winwindowtimer/1*3*playerscale)
 				end
@@ -731,7 +731,7 @@ function rotatedsquare(mode, x, y, r, d)
 end
 
 function drawblock(x, y, width, height, fillcolor, outlinecolor, r)
-	if math.fmod((r or 0), math.pi/2) ~= 0 then --Rotated
+	if math.mod((r or 0), math.pi/2) ~= 0 then --Rotated
 		love.graphics.setColor(unpack(fillcolor))
 		rotatedsquare("fill", x+width/2+.5, y+height/2+.5, r or 0, width-1)
 		love.graphics.setColor(unpack(outlinecolor))
