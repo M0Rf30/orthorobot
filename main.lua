@@ -1,5 +1,5 @@
 --ORTHO ROBOT
---by Maurice Guégan
+--by Maurice Guï¿½gan
 --Stabyourself.net
 
 --music credits:
@@ -128,17 +128,17 @@ function love.load()
 	ssssimg = love.graphics.newImage("ssss.png");ssssimg:setFilter("nearest", "nearest")
 	accentimg = love.graphics.newImage("accent.png");accentimg:setFilter("nearest", "nearest")
 	
-	menumusic = love.audio.newSource("sounds/menu_back.ogg")
+	menumusic = love.audio.newSource("sounds/menu_back.ogg", "static")
 	menumusic:setLooping(true)
 	menumusic:setVolume(0.01)
-	gamemusic = love.audio.newSource("sounds/game_back.ogg")
+	gamemusic = love.audio.newSource("sounds/game_back.ogg", "static")
 	gamemusic:setLooping(true)
-	stabsound = love.audio.newSource("sounds/stab.ogg")
+	stabsound = love.audio.newSource("sounds/stab.ogg", "static")
 	
-	backsound = love.audio.newSource("sounds/back.ogg")
-	proceedsound = love.audio.newSource("sounds/proceed.ogg")
-	winningsound = love.audio.newSource("sounds/winning.ogg")
-	coinsound = love.audio.newSource("sounds/coin.ogg")
+	backsound = love.audio.newSource("sounds/back.ogg", "stream")
+	proceedsound = love.audio.newSource("sounds/proceed.ogg", "static")
+	winningsound = love.audio.newSource("sounds/winning.ogg", "static")
+	coinsound = love.audio.newSource("sounds/coin.ogg", "static")
 	
 	loadlevels()
 	loadsave()
