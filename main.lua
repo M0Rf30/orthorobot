@@ -642,7 +642,7 @@ function round(num, idp)
 end
 
 function loadsave()
-	if not love.filesystem.exists("save.txt") then
+	if not love.filesystem.getInfo("save.txt") then
 		return
 	end
 	
